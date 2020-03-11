@@ -22,15 +22,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getSomeData() {
-    return this.http.get<myData>('http://localhost:8080/api/chorona/database.php');
+    return this.http.get<myData>('http://localhost:8080/api/database.php');
   }
 
   isLoggedIn(): Observable<isLoggedIn> {
-    return this.http.get<isLoggedIn>('http://localhost:8080/api/chorona/isloggedin.php');
+    return this.http.get<isLoggedIn>('http://localhost:8080/api/isloggedin.php');
   }
 
   logout() {
-    return this.http.get<logoutStatus>('http://localhost:8080/api/chorona/logout.php');
+    return this.http.get<logoutStatus>('http://localhost:8080/api/logout.php');
   }
 
 }
