@@ -12,6 +12,7 @@ import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     NgbModule,
+
     RouterModule.forRoot([
       {
         path: 'login',
@@ -44,7 +46,8 @@ import { FormsModule } from '@angular/forms';
         path: '',
         component: HomeComponent
       }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [AuthService, UserService, AuthGuard],
   bootstrap: [AppComponent]
