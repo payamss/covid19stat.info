@@ -1,5 +1,44 @@
+
+
 <div class="content" role="main">
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle >{{SelectedCity}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+          <!-- <form (submit)="SelectCity($event)"> -->
+          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index" (click)="SelectCity($event)">{{city}}</button>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
 
+  </div>
+</div>
+<div class="content" >
+  لطفا اطلاعات مربوط به امروز را وارد نمایید
+</div>
+<div class="content-h" role="main">
+  <div class="content-v" role="main">
+    <label class ="lableLarg" for="typeahead-basic">بهبودیافتگان</label>
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="cured" />
+  </div>
+  <div class="content-v" role="main">
+    <label class ="lableLarg" for="typeahead-basic">فوت شدگان</label>
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="death" />
+  </div>
+  <div class="content-v" role="main">
+    <label class ="lableLarg" for="typeahead-basic">مبتلایان</label>
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="newcase" />
+  </div>
+
+</div>
+<button class="content-v" id="Submit" (click)="SelectCity($event)">ثبت</button>
+
+<hr>
+<pre>newCase: {{ newcase | json }}/Death: {{ death | json }}/Cured: {{ cured | json }}</pre>
+
+<div class="content" role="main">
   <div id="message">{{message}} <a routerLink="/logout" class="button">Logout</a></div>
-
+{{today.}}
 </div>

@@ -6,3 +6,23 @@
   flex-direction: column;
   align-items: center;
 }
+.content-h {
+  display: flex;
+  margin: 42px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: row;
+  align-items: center;
+}
+.content-v {
+  display: flex;
+  margin: auto auto ;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+.lableLarg {
+  font-size: large;
+}
+
