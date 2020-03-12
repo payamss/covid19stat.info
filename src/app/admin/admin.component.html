@@ -21,19 +21,19 @@
 <div class="content-h" role="main">
   <div class="content-v" role="main">
     <label class ="lableLarg" for="typeahead-basic">بهبودیافتگان</label>
-    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="cured" />
+    <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="cured" />
   </div>
   <div class="content-v" role="main">
     <label class ="lableLarg" for="typeahead-basic">فوت شدگان</label>
-    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="death" />
+    <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="death" />
   </div>
   <div class="content-v" role="main">
     <label class ="lableLarg" for="typeahead-basic">مبتلایان</label>
-    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="newcase" />
+    <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="newcase" />
   </div>
 
 </div>
-<button class="content-v" id="Submit" (click)="SelectCity($event)">ثبت</button>
+<button class="content-v" id="Submit" (click)="SubmitData($event)">ثبت</button>
 
 <hr>
 <pre>newCase: {{ newcase | json }}/Death: {{ death | json }}/Cured: {{ cured | json }}</pre>
@@ -41,9 +41,9 @@
 <div class="content" role="main">
   <div id="message">{{message}} <a routerLink="/logout" class="button">Logout</a></div>
 {{today}}
-<mat-form-field>
+<!-- <mat-form-field>
   <input matInput [matDatepicker]="picker6" placeholder="json gregorian input" [(ngModel)]="dateControl">
   <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
   <mat-datepicker #picker6></mat-datepicker>
-</mat-form-field>
+</mat-form-field> -->
 </div>

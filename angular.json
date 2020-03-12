@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "choronasite"
+  "defaultProject": "choronasite",
+  "cli": {
+    "analytics": false
+  }
 }
