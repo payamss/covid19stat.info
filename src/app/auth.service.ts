@@ -24,7 +24,7 @@ export class AuthService {
 
   getUserDetails(username, password) {
     // post these details to API server return user info if correct
-    return this.http.post<myData>('http://localhost:8080/api/auth.php', {
+    return this.http.post<myData>('https://shariat.dev/corona/auth.php', {
       username,
       password
     });
