@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+
 interface Country {
   province: string;
   death: string;
   cured: string;
   newcase: string;
+}
+
+interface Food {
+  value: string;
+  viewValue: string;
 }
 const COUNTRIES: Country[] = [
   {
@@ -29,7 +36,7 @@ export class HomeComponent implements OnInit {
 
 
   constructor() { }
-
+  toppings = new FormControl();
   Cities = ['آذربایجان شرقی','آذربایجان غربی','اردبیل', 'اصفهان', 'البرز', 'ایلام', 'بوشهر', 'تهران',
   'چهارمحال و بختیاری', 'خراسان جنوبی', 'خراسان رضوی', 'خراسان شمالی', 'خوزستان', 'زنجان', 'سمنان',
   'سیستان و بلوچستان', 'فارس', 'قزوین', 'قم', 'کردستان', 'کرمان', 'کرمانشاه', 'کهگیلویه و بویراحمد',

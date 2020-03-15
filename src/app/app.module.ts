@@ -11,8 +11,9 @@ import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminComponent,
     HomeComponent,
     LogoutComponent
+  ], exports: [
+    MatSelectModule,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     NgbModule,
+    MatSelectModule,
+    ReactiveFormsModule,
 
     RouterModule.forRoot([
       {
