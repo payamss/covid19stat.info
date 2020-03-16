@@ -3,18 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 
-//   {
-//     province: 'تهران',
-//     newcase: '1',
-//     death: '2',
-//     cured: '3'
-//   },  {
-//     province: 'شیراز',
-//     newcase: '1',
-//     death: '2',
-//     cured: '3'
-//   },
-// ];
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +11,8 @@ import {FormControl} from '@angular/forms';
 
 export class HomeComponent implements OnInit {
 
-  public myData : any;
+  public myData: any;
+  public mycities: any;
 
 
   constructor(private Loader: LoadfromdbService) { }
@@ -44,6 +33,8 @@ export class HomeComponent implements OnInit {
     this.SelectedCity = target.innerText;
     this.LoadData(this.SelectedCity);
     console.log(this.SelectedCity);
+//     this.mycities = this.mycities + ',' + this.SelectedCity;
+// console.log(this.mycities)
   }
 
 
@@ -52,30 +43,10 @@ export class HomeComponent implements OnInit {
    this.LoadData('');
 
   }
-  title = 'choronasite';
-
-  //countries = COUNTRIES;
   LoadData(s) {
-
-
-      // event.preventDefault();
-      // const target = event.target;
-      //debugger
-      // const date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
-
-      // console.log(date, this.newcase, this.death, this.cured, this.SelectedCity);
       this.Loader.LoadData(s).subscribe(data => {
        console.log(data);
        this.myData = data;
-       //let COUNTRIES = JSON.parse(data);
-
-        // if (data.success) {
-        //   window.alert(data.message);
-        //   this.router.navigate(['admin']);
-
-        // } else {
-        //   window.alert(data.message);
-        // }
        return data;
       });
     }

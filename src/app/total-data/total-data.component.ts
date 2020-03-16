@@ -16,7 +16,7 @@ export class TotalDataComponent implements OnInit {
   }
   LoadData() {
   this.Loader.LoadTotalData().subscribe(data => {
-    console.log(data);
+    //console.log(data);
     this.myData = data;
     return data;
    });

@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { TotalDataComponent } from './total-data/total-data.component';
+import { TableDataComponent } from './table-data/table-data.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TotalDataComponent } from './total-data/total-data.component';
     AdminComponent,
     HomeComponent,
     LogoutComponent,
-    TotalDataComponent
+    TotalDataComponent,
+    TableDataComponent
   ], exports: [
     MatSelectModule,
 

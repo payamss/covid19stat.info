@@ -1,21 +1,22 @@
-<!-- <div class="content" role="main">
+<div class="content-select" role="main" dir=rtl>
+  <app-total-data></app-total-data>
+</div>
+<div class="content" role="main">
   <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle >{{SelectedCity}}</button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
-          <!-- <form (submit)="SelectCity($event)">
-          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index" (click)="SelectCity($event)">{{city}}</button>-->
-<!-- </form> -->
-<!--
+          <form (submit)="SelectCity($event)">
+          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index" (click)="SelectCity($event)">{{city}}</button>
+</form>
+
         </div>
       </div>
     </div>
-</div> -->
-
-<div class="content-select" role="main" dir=rtl>
-  <app-total-data></app-total-data>
 </div>
+
+
 <div class="content-select" role="main" dir=rtl>
 
   <mat-form-field dir=rtl>
@@ -26,7 +27,7 @@
     </mat-select>
   </mat-form-field>
 </div>
-
+<app-table-data></app-table-data>
 
 <div class="content" role="main">
   <table class="table table-striped">

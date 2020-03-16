@@ -1,7 +1,9 @@
 <?php
 $user="root";
+//$user="shariatg_payam";
 $pass="payam123";
 $db='corona';
+//$db='shariatg_corona';
 $host='localhost';
 $link=mysqli_connect($host,$user,$pass );;
 mysqli_select_db($link,$db);
@@ -27,10 +29,11 @@ if($_GET['q']==='add'){
 }elseif ($_GET['q']==='loaddata') {
   $query="";
   if($_GET['s']!=='' && $_GET['s']!=='انتخاب استان ها'){
-    // $query="SELECT * FROM `CoronaInfo` WHERE `provinces` like '%" + $_GET['s'] + '%;";
-    $query="SELECT * FROM `CoronaInfo` WHERE `provinces` LIKE '%اردبیل%'";
+     //$query="SELECT * FROM `CoronaInfo` WHERE `provinces` like '" $_GET['s']';";
+    $query="SELECT * FROM `CoronaInfo` WHERE `provinces` LIKE '%" . $_GET['s'] . "%' order by date DESC";
+    //$query="SELECT * FROM `CoronaInfo` WHERE `provinces` LIKE '%اردبیل%'";
   }else{
-    $query="SELECT * FROM `CoronaInfo`";
+    $query="SELECT * FROM `CoronaInfo` order by date DESC";
 
 
   }
