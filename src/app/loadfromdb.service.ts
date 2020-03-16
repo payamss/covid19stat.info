@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 interface myData {
   date: string;
-  newcase: string;
+  case: string;
   death: string;
   cured: string;
   provinces: string;

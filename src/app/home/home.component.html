@@ -33,16 +33,18 @@
     <th scope="col">فوت شدگان</th>
     <th scope="col">مبتلایان</th>
     <th scope="col">استان</th>
+    <th scope="col">تاریخ</th>
     <th scope="col">#</th>
 
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let country of countries; index as i">
-    <td>{{ country.cured | number }}</td>
-    <td>{{ country.death | number }}</td>
-    <td>{{ country.newcase | number }}</td>
-    <th>{{ country.province  }}</th>
+  <tr *ngFor="let res of myData; index as i">
+    <td>{{ res.cured | number }}</td>
+    <td>{{ res.death | number }}</td>
+    <td>{{ res.case | number }}</td>
+    <th>{{ res.provinces  }}</th>
+    <th>{{ res.date  }}</th>
     <th scope="row">{{ i + 1 }}</th>
 
   </tr>

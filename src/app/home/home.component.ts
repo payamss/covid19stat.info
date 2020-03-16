@@ -2,31 +2,19 @@ import { LoadfromdbService } from './../loadfromdb.service';
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
-interface Country {
-  province: string;
-  death: string;
-  cured: string;
-  newcase: string;
-  data:[];
-}
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
-let COUNTRIES: Country[] = [
-  {
-    province: 'تهران',
-    newcase: '1',
-    death: '2',
-    cured: '3'
-  },  {
-    province: 'شیراز',
-    newcase: '1',
-    death: '2',
-    cured: '3'
-  },
-];
+//   {
+//     province: 'تهران',
+//     newcase: '1',
+//     death: '2',
+//     cured: '3'
+//   },  {
+//     province: 'شیراز',
+//     newcase: '1',
+//     death: '2',
+//     cured: '3'
+//   },
+// ];
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -35,6 +23,7 @@ let COUNTRIES: Country[] = [
 
 export class HomeComponent implements OnInit {
 
+  public myData : any;
 
 
   constructor(private Loader: LoadfromdbService) { }
@@ -59,14 +48,12 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-this.LoadData();
+   this.LoadData();
 
   }
   title = 'choronasite';
-  dataTable: any;
-  dtOptions: any;
-  tableData = [];
-  countries = COUNTRIES;
+
+  //countries = COUNTRIES;
   LoadData() {
 
 
@@ -78,22 +65,9 @@ this.LoadData();
       // console.log(date, this.newcase, this.death, this.cured, this.SelectedCity);
       this.Loader.LoadData().subscribe(data => {
        console.log(data);
+       this.myData = data;
        //let COUNTRIES = JSON.parse(data);
-       this.tableData = data.data;
-       this.dtOptions = {
-         data: this.tableData,
-         columns: [
-           {title: 'ID', data: 'id'},
-           {title: 'Email', data: 'email'},
-           {title: 'First Name', data: 'first_name'},
-           {title: 'Last Name', data: 'last_name'},
-           {title: 'Avatar', data: 'avatar'},
-         ]
-       };
-     }, err => {}, () => {
-       this.dataTable = $(this.table.nativeElement);
-       this.dataTable.DataTable(this.dtOptions);
-     });
+
         // if (data.success) {
         //   window.alert(data.message);
         //   this.router.navigate(['admin']);
@@ -101,6 +75,7 @@ this.LoadData();
         // } else {
         //   window.alert(data.message);
         // }
+       return data;
       });
     }
 

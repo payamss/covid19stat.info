@@ -1,3 +1,4 @@
+import { LoadfromdbService } from './loadfromdb.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -55,7 +56,7 @@ import { MatSelectModule } from '@angular/material/select';
     ]),
     BrowserAnimationsModule
   ],
-  providers: [AuthService, UserService, AuthGuard],
+  providers: [AuthService, UserService, AuthGuard, LoadfromdbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
