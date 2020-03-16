@@ -25,7 +25,15 @@ if($_GET['q']==='add'){
         "success": false
     }';}
 }elseif ($_GET['q']==='loaddata') {
-  $query="SELECT * FROM `CoronaInfo`";
+  $query="";
+  if($_GET['s']!=='' && $_GET['s']!=='انتخاب استان ها'){
+    // $query="SELECT * FROM `CoronaInfo` WHERE `provinces` like '%" + $_GET['s'] + '%;";
+    $query="SELECT * FROM `CoronaInfo` WHERE `provinces` LIKE '%اردبیل%'";
+  }else{
+    $query="SELECT * FROM `CoronaInfo`";
+
+
+  }
   $data=array();
   if($result=mysqli_query($link,$query)){
  	  if(mysqli_num_rows($result)>0)
@@ -52,6 +60,33 @@ mysqli_close($link);
 //     "message": "Data loaded Successfully",
 //     "success": true
 // }';
+}elseif ($_GET['q']==='total') {
+
+
+  $query="SELECT SUM(`case`) as `case` , SUM(`death`) as `death` , SUM(`cured`) as `cured` FROM `CoronaInfo`";
+  $data=array();
+  if($result=mysqli_query($link,$query)){
+ 	  if(mysqli_num_rows($result)>0)
+ 	  {
+       //echo($result);
+      while($row=mysqli_fetch_assoc($result))
+ 		  {
+ 			  $data[]=array("case"=>$row['case'],"death"=>$row['death'],"cured"=>$row['cured']);
+ 		  }
+ 	  }
+ 	  else
+ 	  {
+ 		  echo "no records are matching";
+     }
+  }
+ else
+ {
+ 	die("could not able to execue the command ".mysqli_error($link));
+ }
+
+
+echo json_encode($data);
+mysqli_close($link);
 }
 else{
     echo '{

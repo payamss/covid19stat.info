@@ -15,6 +15,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { TotalDataComponent } from './total-data/total-data.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatSelectModule } from '@angular/material/select';
     LoginComponent,
     AdminComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    TotalDataComponent
   ], exports: [
     MatSelectModule,
 

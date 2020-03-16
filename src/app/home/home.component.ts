@@ -42,19 +42,20 @@ export class HomeComponent implements OnInit {
     //debugger
 
     this.SelectedCity = target.innerText;
+    this.LoadData(this.SelectedCity);
     console.log(this.SelectedCity);
   }
 
 
 
   ngOnInit(): void {
-   this.LoadData();
+   this.LoadData('');
 
   }
   title = 'choronasite';
 
   //countries = COUNTRIES;
-  LoadData() {
+  LoadData(s) {
 
 
       // event.preventDefault();
@@ -63,7 +64,7 @@ export class HomeComponent implements OnInit {
       // const date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
 
       // console.log(date, this.newcase, this.death, this.cured, this.SelectedCity);
-      this.Loader.LoadData().subscribe(data => {
+      this.Loader.LoadData(s).subscribe(data => {
        console.log(data);
        this.myData = data;
        //let COUNTRIES = JSON.parse(data);

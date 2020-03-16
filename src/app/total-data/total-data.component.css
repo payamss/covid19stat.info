@@ -1,0 +1,70 @@
+
+ .badge {
+	 position: relative;
+	 width: 216px;
+	 display: inline-block;
+	 margin: 20px;
+}
+ .badge .title {
+	 font-family: "Montserrat", sans-serif;
+	 font-weight: bold;
+	 font-size: 1.7em;
+	 position: absolute;
+	 top: -28px;
+	 border-radius: 8px 8px 0 0;
+	 text-align: center;
+	 width: 100%;
+	 background: red;
+	 padding: 20px 0;
+}
+ .badge .subtitle {
+	 position: absolute;
+	 font-family: "Fjalla One", sans-serif;
+	 font-size: 1.8em;
+	 width: 100%;
+	 text-align: center;
+	 color: white;
+	 position: absolute;
+	 top: 100px;
+}
+ .badge .subtitle:after {
+	 content: "★ ★ ★";
+	 display: block;
+	 font-size: 0.4em;
+	 position: relative;
+	 margin: 15px 0 0;
+	 transition: all 0.3s;
+}
+ .badge:hover .subtitle:after {
+	 word-spacing: 30px;
+}
+ .red .title {
+	 background: #dc514e;
+}
+ .red .subtitle:after {
+	 color: #dc514e;
+}
+ .green .title {
+	 background: #2ecc71;
+}
+ .green .subtitle:after {
+	 color: #2ecc71;
+}
+ .gray .title {
+	 background: #95a5a6;
+}
+ .gray .subtitle:after {
+	 color: #95a5a6;
+}
+ .yellow .title {
+	 background: #f1c40f;
+}
+ .yellow .subtitle:after {
+	 color: #f1c40f;
+}
+ .blue .title {
+	 background: #3498db;
+}
+ .blue .subtitle:after {
+	 color: #3498db;
+}
