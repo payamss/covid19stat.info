@@ -1,9 +1,7 @@
 <?php
-$user="root";
-//$user="shariatg_payam";
-$pass="payam123";
-$db='corona';
-//$db='shariatg_corona';
+$user="covid1_payam";
+$pass="aeB9AELij4";
+$db='covid1_corona';
 $host='localhost';
 $link=mysqli_connect($host,$user,$pass );;
 mysqli_select_db($link,$db);

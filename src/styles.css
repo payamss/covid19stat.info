@@ -9,3 +9,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "compass/css3";
  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
  @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+ .sitebody{
+
+  background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(46,204,113,1));
+  /* height: 800px; */
+
+}

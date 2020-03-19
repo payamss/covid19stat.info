@@ -22,15 +22,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getSomeData() {
-    return this.http.get<myData>('https://shariat.dev/corona/database.php');
+    return this.http.get<myData>('http://covid19stat.info/database.php');
   }
 
   isLoggedIn(): Observable<isLoggedIn> {
-    return this.http.get<isLoggedIn>('https://shariat.dev/corona/isloggedin.php');
+    return this.http.get<isLoggedIn>('http://covid19stat.info/isloggedin.php');
   }
 
   logout() {
-    return this.http.get<logoutStatus>('https://shariat.dev/corona/logout.php');
+    return this.http.get<logoutStatus>('http://covid19stat.info/logout.php');
   }
 
 }

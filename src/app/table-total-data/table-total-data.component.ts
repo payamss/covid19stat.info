@@ -5,7 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LoadfromdbService } from '../loadfromdb.service';
 import { DataSource } from '@angular/cdk/collections';
-
 export interface UserData {
   date: string;
   case: string;
@@ -13,38 +12,30 @@ export interface UserData {
   cured: string;
   provinces: string;
 }
-
-
-/**
- * @title Data table with sorting, pagination, and filtering.
- */
 @Component({
-  selector: 'app-table-data',
-  templateUrl: './table-data.component.html',
-  styleUrls: ['./table-data.component.css']
+  selector: 'app-table-total-data',
+  templateUrl: './table-total-data.component.html',
+  styleUrls: ['./table-total-data.component.css']
 })
-export class TableDataComponent implements OnInit {
+export class TableTotalDataComponent implements OnInit {
   public myData: any;
-
+  case: any;
+  death: any;
+  cured: any;
   displayedColumns: string[] = ['cured', 'death', 'case', 'provinces', 'date' ];
   dataSource: DataTableComponent;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-
   constructor(private Loader: LoadfromdbService) {
-    // Create 100 users
-    // const users = Array.from(this.myData);
-
-    // Assign the data to the data source for the table to render
     this.dataSource = new DataTableComponent(this.Loader);
+
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -53,19 +44,16 @@ export class TableDataComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  // LoadData(s) {
-  //   this.Loader.LoadData(s).subscribe(data => {
-  //     console.log(data);
-  //     this.myData = data;
-  //     return {
-  //       date: data.date,
-  //       case: data.case,
-  //       death: data.death,
-  //       cured: data.cured,
-  //       provinces: data.provinces
-  //     };
-  //   });
-  // }
+  getTotalCase() {
+    return this.case.map(t => t.case).reduce((acc, value) => acc + value, 0);
+  }
+  getTotalDeath() {
+    return this.death.map(t => t.death).reduce((acc, value) => acc + value, 0);
+  }
+  getTotalCured() {
+
+    return this.cured.map(t => t.cured).reduce((acc, value) => acc + value, 0);
+  }
 }
 export class DataTableComponent extends DataSource<any> {
   paginator: MatPaginator;

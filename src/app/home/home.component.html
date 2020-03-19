@@ -1,60 +1,64 @@
 <div class="content-select" role="main" dir=rtl>
+  <div class="content-select" role="main" dir=rtl>
+
   <app-total-data></app-total-data>
+</div>
 </div>
 <div class="content" role="main">
   <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle >{{SelectedCity}}</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+        <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle>{{SelectedCity}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <form (submit)="SelectCity($event)">
-          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index" (click)="SelectCity($event)">{{city}}</button>
-</form>
+            <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index"
+              (click)="SelectCity($event)">{{city}}</button>
+          </form>
 
         </div>
       </div>
     </div>
-</div>
+  </div>
+  <!-- <app-table-total-data style="width:100%;"></app-table-total-data> -->
+
+  <app-table-data style="width:100%;"></app-table-data>
+
+  <div class="content-select" role="main" dir=rtl>
+
+    <mat-form-field dir=rtl>
+      <mat-label dir=rtl style="color: brown;"> انتخاب استان ها</mat-label>
+      <mat-select [formControl]="toppings" multiple>
+        <mat-option *ngFor="let topping of Cities ; let i=index" (click)="SelectCity($event)" [value]="topping"
+          style="color: brown;">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <!-- <div class="content" role="main">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+
+          <th scope="col">بهبود یافتگان</th>
+          <th scope="col">فوت شدگان</th>
+          <th scope="col">مبتلایان</th>
+          <th scope="col">استان</th>
+          <th scope="col">تاریخ</th>
+          <th scope="col">#</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of myData; index as i">
+          <td>{{ res.cured | number }}</td>
+          <td>{{ res.death | number }}</td>
+          <td>{{ res.case | number }}</td>
+          <th>{{ res.provinces  }}</th>
+          <th>{{ res.date  }}</th>
+          <th scope="row">{{ i + 1 }}</th>
+
+        </tr>
+      </tbody>
+    </table>
 
 
-<div class="content-select" role="main" dir=rtl>
-
-  <mat-form-field dir=rtl>
-    <mat-label dir=rtl style="color: brown;"> انتخاب استان ها</mat-label>
-    <mat-select [formControl]="toppings" multiple>
-      <mat-option *ngFor="let topping of Cities ; let i=index" (click)="SelectCity($event)" [value]="topping"
-        style="color: brown;">{{topping}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<app-table-data></app-table-data>
-
-<div class="content" role="main">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-
-        <th scope="col">بهبود یافتگان</th>
-        <th scope="col">فوت شدگان</th>
-        <th scope="col">مبتلایان</th>
-        <th scope="col">استان</th>
-        <th scope="col">تاریخ</th>
-        <th scope="col">#</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let res of myData; index as i">
-        <td>{{ res.cured | number }}</td>
-        <td>{{ res.death | number }}</td>
-        <td>{{ res.case | number }}</td>
-        <th>{{ res.provinces  }}</th>
-        <th>{{ res.date  }}</th>
-        <th scope="row">{{ i + 1 }}</th>
-
-      </tr>
-    </tbody>
-  </table>
-
-
-</div>
+  </div> -->

@@ -52,7 +52,7 @@ p {
 
 .content {
   display: flex;
-  margin: 82px auto 32px;
+  margin: 32px auto 32px;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -62,13 +62,14 @@ p {
 }
 .content-select {
   display: flex;
-  margin: 82px auto 32px;
+  margin: 60px auto 32px;
   padding: 0 16px;
   max-width: 960px;
   direction: rtl;
   font-size: large;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 svg.material-icons {
   height: 24px;
