@@ -1,13 +1,12 @@
-
-
 <div class="content" role="main">
   <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle >{{SelectedCity}}</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+        <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle>{{SelectedCity}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <!-- <form (submit)="SelectCity($event)"> -->
-          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index" (click)="SelectCity($event)">{{city}}</button>
+          <button id="city" ngbDropdownItem *ngFor="let city of Cities ; let i=index"
+            (click)="SelectCity($event)">{{city}}</button>
           <!-- </form> -->
         </div>
       </div>
@@ -15,33 +14,41 @@
 
   </div>
 </div>
-<div class="content" >
+<div class="content">
+
   لطفا اطلاعات مربوط به امروز را وارد نمایید
+</div>
+<div class="content">
+  <div class="content-v" role="main">
+    <label class="lableLarg" for="typeahead-basic">تاریخ</label>
+    <input id="typeahead-basic" type="text" min="0" class="form-control" placeholder="Ex: 1398/11/22"[(ngModel)]="date" />
+  </div>
 </div>
 <div class="content-h" role="main">
   <div class="content-v" role="main">
-    <label class ="lableLarg" for="typeahead-basic">بهبودیافتگان</label>
-    <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="cured" />
+    <label class="lableLarg" for="typeahead-basic">بهبودیافتگان</label>
+    <input id="typeahead-basic" type="number" min="0" class="form-control"  [(ngModel)]="cured" />
   </div>
   <div class="content-v" role="main">
-    <label class ="lableLarg" for="typeahead-basic">فوت شدگان</label>
+    <label class="lableLarg" for="typeahead-basic">فوت شدگان</label>
     <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="death" />
   </div>
   <div class="content-v" role="main">
-    <label class ="lableLarg" for="typeahead-basic">مبتلایان</label>
+    <label class="lableLarg" for="typeahead-basic">مبتلایان</label>
     <input id="typeahead-basic" type="number" min="0" class="form-control" [(ngModel)]="newcase" />
   </div>
 
 </div>
-<button class="content-v" id="Submit" (click)="SubmitData($event)">ثبت</button>
-
+<div class="content-v">
+<button class="btn btn-outline-primary" id="Submit" (click)="SubmitData($event)">&nbsp;&nbsp;&nbsp;&nbsp;ثبت &nbsp;&nbsp;&nbsp;&nbsp;</button>
+</div>
 <hr>
 <pre>newCase: {{ newcase | json }}/Death: {{ death | json }}/Cured: {{ cured | json }}</pre>
 
 <div class="content" role="main">
   <div id="message">{{message}} <a routerLink="/logout" class="button">Logout</a></div>
-{{today}}
-<!-- <mat-form-field>
+  {{today}}
+  <!-- <mat-form-field>
   <input matInput [matDatepicker]="picker6" placeholder="json gregorian input" [(ngModel)]="dateControl">
   <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
   <mat-datepicker #picker6></mat-datepicker>

@@ -13,7 +13,7 @@ export class AddtodbService {
   insertData(date, newcase, death, cured, provinces) {
     //debugger
     // post these details to API server return user info if correct
-    return this.http.post<myData>('http://covid19stat.info/index.php?q=add', {
+    return this.http.post<myData>('http://192.168.1.178:8080/api/index.php?q=add', {
       date,
       newcase,
       death,

@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  text-align: center !important;
 
 }
 
@@ -15,18 +16,33 @@ td, tr {
   width: 20%;
   font-weight: bold;
   border-color: rgb(214, 214, 214);
-
 }
 ng-container{
   align-items: center;
 
 }
 
-.mat-header-cell, .mat-cell {    text-align: center;    }
+.mat-header-cell{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+
+}
+.mat-cell {
+  text-align: center;
+
+}
 .mat-header-row{
-  color: brown;
+  color: rgb(0, 0, 0);
   width: 20%;
   font-weight: bold;
-  background-color: rgb(194, 194, 194);
-  font-size: 16px;
+
+  background-color: rgb(0, 184, 197);
+
+}
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
 }

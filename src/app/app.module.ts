@@ -60,6 +60,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,12 +70,16 @@ import {MatTreeModule} from '@angular/material/tree';
     LogoutComponent,
     TotalDataComponent,
     TableDataComponent,
-    TableTotalDataComponent
+    TableTotalDataComponent,
+
   ], exports: [
     MatSelectModule,
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatSortModule,
   ],
   imports: [
     MatInputModule,
@@ -87,6 +92,8 @@ import {MatTreeModule} from '@angular/material/tree';
     ReactiveFormsModule,
     MatPaginatorModule,
     MatTableModule,
+    MatIconModule,
+    MatSortModule,
     RouterModule.forRoot([
       {
         path: 'login',
