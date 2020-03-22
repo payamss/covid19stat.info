@@ -12,6 +12,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  .sitebody{
 
   background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(46,204,113,1));
-  /* height: 800px; */
+  height: 600px;
 
 }

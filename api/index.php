@@ -1,10 +1,10 @@
 <?php
-$user="root";
-$pass="payam123";
-$db='corona';
-// $user="covid1_payam";
-// $pass="aeB9AELij4";
-// $db='covid1_corona';
+// $user="root";
+// $pass="payam123";
+// $db='corona';
+$user="covid1_payam";
+$pass="aeB9AELij4";
+$db='covid1_corona';
 $host='localhost';
 $link=mysqli_connect($host,$user,$pass );;
 mysqli_select_db($link,$db);
@@ -76,6 +76,51 @@ mysqli_close($link);
       while($row=mysqli_fetch_assoc($result))
  		  {
  			  $data[]=array("case"=>$row['case'],"death"=>$row['death'],"cured"=>$row['cured']);
+ 		  }
+ 	  }
+ 	  else
+ 	  {
+ 		  echo "no records are matching";
+     }
+  }
+ else
+ {
+ 	die("could not able to execue the command ".mysqli_error($link));
+ }
+
+
+echo json_encode($data);
+mysqli_close($link);
+
+} elseif ($_GET['q']==='totalProvinces') {
+
+if($_GET['s']==='case'){
+  $query="SELECT `provinces`, SUM(`case`) as `case`  FROM `CoronaInfo` GROUP BY `provinces`";
+}elseif ($_GET['s']==='cured') {
+  $query="SELECT `provinces`, SUM(`cured`) as `cured` FROM `CoronaInfo` GROUP BY `provinces`";
+}elseif ($_GET['s']==='death') {
+  $query="SELECT `provinces`, SUM(`death`) as `death` FROM `CoronaInfo` GROUP BY `provinces`";
+}else{
+  $query="SELECT `provinces`, SUM(`case`) as `case` , SUM(`death`) as `death` , SUM(`cured`) as `cured` FROM `CoronaInfo` GROUP BY `provinces`";
+
+}
+  $data=array();
+  if($result=mysqli_query($link,$query)){
+ 	  if(mysqli_num_rows($result)>0)
+ 	  {
+       //echo($result);
+      while($row=mysqli_fetch_assoc($result))
+ 		  {
+        if($_GET['s']==='case'){
+          $data[]=array("value"=>$row['case'],"name"=>$row['provinces']);
+        }elseif ($_GET['s']==='cured') {
+          $data[]=array("value"=>$row['cured'],"name"=>$row['provinces']);
+        }elseif ($_GET['s']==='death') {
+          $data[]=array("value"=>$row['death'],"name"=>$row['provinces']);
+        }else{
+          $data[]=array("case"=>$row['case'],"death"=>$row['death'],"cured"=>$row['cured'],"provinces"=>$row['provinces']);
+
+        }
  		  }
  	  }
  	  else

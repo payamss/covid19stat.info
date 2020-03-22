@@ -60,6 +60,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,7 @@ import {MatTreeModule} from '@angular/material/tree';
     TotalDataComponent,
     TableDataComponent,
     TableTotalDataComponent,
+    PieChartComponent,
 
   ], exports: [
     MatSelectModule,
@@ -94,6 +97,8 @@ import {MatTreeModule} from '@angular/material/tree';
     MatTableModule,
     MatIconModule,
     MatSortModule,
+    NgxEchartsModule,
+
     RouterModule.forRoot([
       {
         path: 'login',

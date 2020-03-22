@@ -17,12 +17,12 @@ export class LoadfromdbService {
   LoadData(s) {
     //debugger
     // post these details to API server return user info if correct
-    return this.http.post<myData>('http://192.168.1.178:8080/api/index.php?q=loaddata&s=' + s, {
+    return this.http.post<myData>('http://covid19stat.info/index.php?q=loaddata&s=' + s, {
 
     });
 }
 GetData(): Observable<myData[]> {
-  return this.http.post<myData[]>('http://192.168.1.178:8080/api/index.php?q=loaddata', {});
+  return this.http.post<myData[]>('http://covid19stat.info/index.php?q=loaddata', {});
 }
 
 }

@@ -27,7 +27,7 @@ export class TableDataComponent implements OnInit {
   // listData = new MatTableDataSource<UserData>(this.myData);
 
    displayedColumns: string[] = ['cured', 'death', 'case', 'provinces', 'date' ];
-    listData = new MatTableDataSource();
+    listData: any = new MatTableDataSource();
 
    @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -46,8 +46,8 @@ export class TableDataComponent implements OnInit {
     //       });
     //     };
      });
-     this.listData.sort = this.sort;
-     this.listData.paginator = this.paginator;
+    this.listData.sort = this.sort;
+    this.listData.paginator = this.paginator;
   }
 
   onSearchClear() {

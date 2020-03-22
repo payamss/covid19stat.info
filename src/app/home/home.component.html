@@ -1,11 +1,11 @@
 <div class="content-select" role="main" dir=rtl>
-  <div class="content-select" role="main" dir=rtl>
 
-  <app-total-data></app-total-data>
-</div>
+
+    <app-total-data></app-total-data>
+    <app-pie-chart></app-pie-chart>
 </div>
 <div class="content" role="main">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-outline-primary" id="provinceselection" ngbDropdownToggle>{{SelectedCity}}</button>
@@ -18,8 +18,14 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- <app-table-total-data style="width:100%;"></app-table-total-data> -->
+  </div> -->
+  <p style="font-weight: bold;">آمار کلی کرونا به تفکیک هر استان</p>
+  <br>
+  <app-table-total-data style="width:100%;"></app-table-total-data>
+  <br>
+
+  <p style="font-weight: bold;">آمار روزانه کرونا به تفکیک هر استان</p>
+  <br>
 
   <app-table-data style="width:100%;"></app-table-data>
 
